@@ -15,6 +15,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 	
+	//localhost:8080/users/id
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
