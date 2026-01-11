@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devweb.course.entities.Order;
-import com.devweb.course.services.OrderService;
+import com.devweb.course.entities.Category;
+import com.devweb.course.services.CategoryService;
 
-//controlador rest que responde no caminho '/orders'
-@RestController //quando chamar localhost:8080/orders, vai aparecer o pedido
-@RequestMapping(value="/orders")
-public class OrderResource {
+//controlador rest que responde no caminho '/category'
+@RestController //quando chamar localhost:8080/category, vai aparecer o pedido
+@RequestMapping(value="/category")
+public class CategoryResource {
 	
 	@Autowired
-	private OrderService service;
+	private CategoryService service;
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Order> findById(@PathVariable Long id){
-		Order obj = service.findById(id);
+	public ResponseEntity<Category> findById(@PathVariable Long id){
+		Category obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<Order>> findAll(){
-		List<Order> list = service.findAll();
+	public ResponseEntity<List<Category>> findAll(){
+		List<Category> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 
