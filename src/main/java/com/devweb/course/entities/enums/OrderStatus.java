@@ -1,12 +1,12 @@
 package com.devweb.course.entities.enums;
 
 public enum OrderStatus {
-	WAITING_PAYMENT(1),
-	PAID(2),
-	PACKING(3),
-	SHIPPED(4),
-	DELIVERED(5),
-	CANCELED(6);
+	WAITING_PAYMENT(1), //aguardando pagamento
+	PAID(2), //pago
+	PACKING(3), //empacotando
+	SHIPPED(4), //enviado
+	DELIVERED(5), //entregue
+	CANCELED(6); //cancelado
 	
 	private int code;
 	
